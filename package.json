@@ -1,6 +1,6 @@
 {
-  "name": "hotel_booking_case_2024",
-  "version": "0.1.0",
+  "name": "hotel_booking_case_2024_improved",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev & open-cli http://localhost:3000",
