@@ -73,8 +73,8 @@ const BookingForm: React.FC = () => {
                 <FormControl fullWidth margin="normal">
                     <InputLabel id="room-type-label">Romtype</InputLabel>
                     <Select onChange={handleRoomTypeChange} label={"Romtype"} variant="outlined" labelId="room-type-label" value={roomType} required >
-                        {roomTypes.map((type) => (
-                            <MenuItem key={type.value} value={type.value} disabled={type.disabled} style={type.style}>{type.label}</MenuItem>
+                        {roomTypes.map((room) => (
+                            <MenuItem key={room.value} value={room.value} disabled={room.disabled} style={room.style}>{room.label}</MenuItem>
                         ))}
                     </Select>
                     <DatePicker onChange={handleStartDateChange} label="Fra dato" value={updatedStartDate} {...commonSlots} />
