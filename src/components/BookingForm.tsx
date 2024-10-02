@@ -38,8 +38,8 @@ const BookingForm: React.FC = () => {
     const handleStartDateChange     = (newDate:         Dayjs | null)               => { setStartDate(newDate);                 validateDates(newDate, updatedEndDate);                 };
     const handleEndDateChange       = (newDate:         Dayjs | null)               => { setEndDate  (newDate);                 validateDates(updatedStartDate, newDate);               };
     const handleRoomTypeChange      = (e:               SelectChangeEvent<string>)  => { setRoomType(e.target.value as string);                                                         };
-    const handleOnStartDateError    = (startDateError:  DateValidationError)        => { setStartDateError(startDateError);     (startDateError)    ? setGenericError('startDateError') : validateDates(updatedStartDate, updatedEndDate); };
-    const handleOnEndDateError      = (endDateError:    DateValidationError)        => { setEndDateError(endDateError)    ;     (endDateError)      ? setGenericError('endDateError')   : validateDates(updatedStartDate, updatedEndDate); };
+    const handleOnStartDateError    = (startDateError:  DateValidationError)        => { setStartDateError(startDateError);     return (startDateError)    ? setGenericError('startDateError') : validateDates(updatedStartDate, updatedEndDate); };
+    const handleOnEndDateError      = (endDateError:    DateValidationError)        => { setEndDateError(endDateError)    ;     return (endDateError)      ? setGenericError('endDateError')   : validateDates(updatedStartDate, updatedEndDate); };
 
     const isFormValid = React.useMemo(() => {
         return (
