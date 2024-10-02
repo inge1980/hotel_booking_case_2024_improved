@@ -77,7 +77,9 @@ const BookingForm: React.FC = () => {
                             <MenuItem key={room.value} value={room.value} disabled={room.disabled} style={room.style}>{room.label}</MenuItem>
                         ))}
                     </Select>
-                    <FormHelperText id="room-type-helper-text">Vennligst velg et rom</FormHelperText>
+                    {!roomType && 
+                        <FormHelperText id="room-type-helper-text">Vennligst velg et rom</FormHelperText>
+                    }
                     <DatePicker onChange={handleStartDateChange} label="Fra dato" value={updatedStartDate} {...commonSlots} />
                     <DatePicker onChange={handleEndDateChange} label="Til dato" value={updatedEndDate} {...commonSlots} />
                     <Button type="submit" variant="contained" color="primary">Bestill rom</Button>
