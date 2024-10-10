@@ -1,1 +1,3 @@
-Hotellreservasjon - Forbedret versjon lagd etter intervjufristen var gått ut
+Hotellreservasjon - Forbedret feilbehandling (lagd etter intervjufristen var gÃ¥tt ut)
+
+https://hotel-booking-case-2024-improved.vercel.app 
