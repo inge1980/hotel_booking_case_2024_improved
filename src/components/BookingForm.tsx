@@ -50,7 +50,12 @@ const BookingForm = () => {
     // Når innsjekk endres
     const handleStartDateChange = (newDate: Dayjs | null) => {
         setStartDate(newDate);
-        validateDates(newDate, endDate);
+        
+        if (newDate && endDate && (endDate.isBefore(newDate) || endDate.isSame(newDate))) {
+            setEndDate(null); // Nullstill utsjekk hvis innsjekk er samme dag eller senere
+        } else {
+            validateDates(newDate, endDate); // Sjekk om datoene er godkjent
+        }
     };
 
     // Når utsjekk endres
@@ -164,6 +169,7 @@ const BookingForm = () => {
         value: endDate,
         onDateChange: handleEndDateChange,
         onDateError: (error:DateValidationError | null) => handleDateError('end', !!error),
+        minDate: startDate ? startDate.add(1, 'day') : undefined, // sett utsjekk til dagen etter innsjekk, eller senere
         ...commonProps,
     };
     const genericFormHelperProps = {
