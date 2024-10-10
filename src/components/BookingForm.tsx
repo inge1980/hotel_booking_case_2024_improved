@@ -78,7 +78,11 @@ const BookingForm = () => {
         const value = e.target.value as string;
         setRoomType(value);
         setRoomTypeTouched(true);
-        value ? setRoomTypeError(null) : ERROR_MESSAGES.initialRoomType;
+        if (value) {
+            setRoomTypeError(null);
+        } else {
+            setRoomTypeError(ERROR_MESSAGES.initialRoomType);
+        }
     };
 
     // Når man sender skjemaet
